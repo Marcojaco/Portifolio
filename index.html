@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <title>home</title>
+</head>
+<body>
+
+        <video class="video-bg" autoplay muted loop playsinline>
+        <source src="templates/videos/video_de_fundo.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <header class="navbar">
+        <nav>
+            <a href="#inicio" class="active">inicio</a>
+            <a href="#sobre">sobre</a>
+            <a href="#projetos">projetos</a>
+            <a href="#contato">contato</a>
+        </nav>
+
+    </header>
+
+    <section id="inicio">
+        <div class="nomes">
+
+            <div id="nomeGrande">
+                <h1>Marco J Borges</h1>
+            </div>
+
+            <div id="subtitulo">
+                <h3>Desenvolvedor Front-End</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div id="infos" class="animate-left">
+            <h3>Sobre mim:</h3>
+            <div id="foto-text">
+                <div id="pequeno-para">
+                    <p>
+                        Olá, me chamo Marco Jacob Borges, tenho 15 anos, moro em Belo Horizonte - MG, sou estudante de desenvolvimento web FULL-STACK, mas tenho foco em FRONT-END, atualmente busco minha primeira vaga na área da tecnologia, tenho alguns projetos no meu GitHub, lá mostro um pouco das minhas conpetências, para falar comigo acesse a aba de contato.
+                    </p>
+                    <a href="https://github.com/Marcojaco" id="link-github">Acesse meu GitHub aqui</a>
+                </div>
+
+                <div class="foto-wrapper animate-right">
+                    <img id="foto-minha" src="templates/img/eu.jpg" alt="Minha foto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+
+    </section>
+
+    <section id="contato" class="contato">
+        <h2>Contato</h2>
+
+        <div class="social-buttons">
+            <a
+                href="https://wa.me/5531991847266"
+                target="_blank"
+                class="icon-btn whatsapp"
+                aria-label="WhatsApp"
+            >
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a
+                href="https://instagram.com/_mj_borges_"
+                target="_blank"
+                class="icon-btn instagram"
+                aria-label="Instagram"
+            >
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+                href="https://linkedin.com/in/marco-jacob-borges-232675344/"
+                target="_blank"
+                class="icon-btn linkedin"
+                aria-label="linkedin"
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
+        <div id="formulario">
+            <form action="https://formsubmit.co/marcojacobborges26@gmail.com" method="POST" class="form-contato">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nova mensagem do site">
+
+                <input type="text" name="name" placeholder="Seu nome" required>
+                <input type="email" name="email" placeholder="Seu email" required>
+                <textarea name="message" placeholder="Sua mensagem" required></textarea>
+
+                <button type="submit">Enviar mensagem</button>
+            </form>
+        </div>
+    </section>
+</body>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        } else {
+        entry.target.classList.remove("show");
+        }
+    });
+    }, {
+    threshold: 0.2
+    });
+
+    document.querySelectorAll(".animate-left, .animate-right")
+    .forEach(el => observer.observe(el));
+</script>
+
+</html>

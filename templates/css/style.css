@@ -1,6 +1,32 @@
 * {
-    background-color: #04198f;
+    font-family: "Roboto Slab", serif;
+    overflow-x: hidden;
 }
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 25, 143, 0.6); /* seu azul + elegância */
+    z-index: -1;
+}
+
+section {
+    padding: 120px 20px;
+}
+
 
 .nomes {
     display: flex;
@@ -21,7 +47,6 @@
     padding: 10px;
 
     color: #ffffff;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 #subtitulo {
@@ -37,77 +62,80 @@
 }
 
 #nomeGrande h1 {
-  overflow: hidden; 
-  border-right: 2px solid #000; 
-  white-space: nowrap; 
-  margin: 0 auto;
-  animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite; 
+    overflow: hidden; 
+    border-right: 2px solid #000; 
+    white-space: nowrap; 
+    margin: 0 auto;
+    animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite; 
 }
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+    from { width: 0; }
+    to { width: 100%; }
 }
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: #000; }
+    from, to { border-color: transparent; }
+    50% { border-color: #000; }
 }
 
 
 .navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 70px;
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 0 40px;
-
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 40px;
+    background: rgba(0, 0, 0, 0);
+    z-index: 1000;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 nav {
-  display: flex;
-  gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 nav a {
-  color: #ccc;
-  text-decoration: none;
-  font-size: 1rem;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s ease;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 10px 0; 
 }
+
 
 
 nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: #00ffcc;
-  transition: width 0.3s ease;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0; /* NÃO negativo */
+    width: 0%;
+    height: 2px;
+    background-color: #00ffcc;  
+    transition: width 0.3s ease;
 }
 
+
 nav a:hover {
-  color: #fff;
+    color: #fff;
 }
 
 nav a:hover::after,
 nav a.active::after {
-  width: 100%;
+    width: 100%;
 }
 
 nav a.active {
-  color: #fff;
+    color: #fff;
 }
 
-
-#sobre {
-    margin-top: 200px;
+#infos {
+    animation: fadeSlideLeft 0.8s ease-out forwards;
 }
 
 #infos h3 {
@@ -115,31 +143,74 @@ nav a.active {
     font-size: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 
-    font-family: "SN Pro", sans-serif;
+    font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-style: normal;
 }
 
 #infos p {
     color: white;
-    font-size: 25px;
-    margin-left: 300px;
-    margin-right: 300px;
+    font-size: 23px;
     padding: 20px;
+    margin-right: 486.891px 200px;
 
-    text-align: center;
+    text-align: left;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: left;
 
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
-
-    font-family: "SN Pro", sans-serif;
+    font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-style: normal;
+
+    flex: 1;              
+    max-width: 600px;     
+
 }
+
+#link-github {
+    font-size: large;
+}
+
+#foto-text {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+}
+
+
+#foto-minha {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    flex-shrink: 0;
+    
+}
+
+.foto-wrapper {
+    padding: 20px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    animation: fadeSlideRight 0.8s ease-out forwards;
+}
+
+
+#foto-minha:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.55);
+}
+
 
 
 .contato {
@@ -177,6 +248,7 @@ nav a.active {
     color: #fff;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 20px;
 }
 
 .icon-btn.whatsapp {
@@ -187,6 +259,10 @@ nav a.active {
 .icon-btn.instagram {
     background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
     box-shadow: 0 8px 20px rgba(221, 42, 123, 0.4);
+}
+
+.icon-btn.linkedin {
+    background: blue;
 }
 
 .icon-btn:hover {
@@ -227,6 +303,59 @@ nav a.active {
     background: #000;
 }
 
-#formulario {
-    margin-top: 30px;
+
+@media (max-width: 768px) {
+    .video-bg {
+        display: none;
+    }
+
+    body {
+        background: #04198f;
+    }
+}
+
+@media (max-width: 768px) {
+    #foto-text {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    #foto-minha {
+        width: 260px;
+        height: 260px;
+    }
+}
+@media (max-width: 900px) {
+    #foto-text {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+
+.animate-left,
+.animate-right {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+.animate-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.animate-left {
+    transform: translateX(-40px);
+}
+
+.animate-right {
+    transform: translateX(40px);
 }
