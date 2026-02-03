@@ -64,6 +64,7 @@ nav a {
     font-size: 1rem;
     position: relative;
     padding: 10px 0; 
+    height: 30px;
 }
 
 
@@ -72,11 +73,11 @@ nav a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0; /* NÃO negativo */
+    bottom: 0; 
     width: 0%;
     height: 2px;
     background-color: #00ffcc;  
-    transition: width 0.3s ease;
+    transition: width 0.5s ease;
 }
 
 
@@ -86,7 +87,7 @@ nav a:hover {
 
 nav a:hover::after,
 nav a.active::after {
-    width: 100%;
+    width: 100px;
 }
 
 nav a.active {
@@ -353,6 +354,10 @@ nav a.active {
 
     section {
         padding: 20px;
+    }
+
+    nav a::after {
+        transition: width 0.7s ease;
     }
 
     #nomeGrande {
