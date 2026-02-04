@@ -1,6 +1,9 @@
 * {
     font-family: "Roboto Slab", serif;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .video-bg {
@@ -19,12 +22,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(4, 25, 143, 0.6); /* seu azul + elegância */
+    background: rgba(4, 25, 143, 0.6);
     z-index: -1;
 }
 
 section {
-    padding: 120px 20px;
+    padding-top: 10px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* -------------------------------------------------------------*/
@@ -34,15 +41,11 @@ section {
     width: 100%;
     height: 70px;
     backdrop-filter: blur(8px);
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 1000;
-
     display: flex;
     justify-content: center;
-
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+    align-items: center;
 }
 
 .navbar nav {
@@ -53,45 +56,35 @@ section {
     justify-content: center;
 }
 
-nav {
-    display: flex;
-    gap: 30px;
-}
-
 nav a {
     color: #ccc;
     text-decoration: none;
     font-size: 1rem;
     position: relative;
-    padding: 10px 0; 
-    height: 30px;
+    padding: 10px 0;
+    transition: color 0.3s ease;
 }
-
-
 
 nav a::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0; 
+    left: 50%;
+    bottom: 0;
     width: 0%;
     height: 2px;
-    background-color: #00ffcc;  
-    transition: width 0.5s ease;
+    background-color: #00ffcc;
+    transition: width 0.5s ease, left 0.5s ease;
+    transform: translateX(-50%);
 }
 
-
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: #fff;
 }
 
 nav a:hover::after,
 nav a.active::after {
-    width: 100px;
-}
-
-nav a.active {
-    color: #fff;
+    width: 100%;
 }
 
 /* -------------------------------------------------------------*/
@@ -101,51 +94,47 @@ nav a.active {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    text-align: center;
     height: 100vh;
 }
 
 #nomeGrande {
     font-size: 60px;
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    
-    margin: 15px;
-    padding: 10px;
-
+    margin: 15px 0;
     color: #ffffff;
 }
 
 #subtitulo {
     font-size: 35px;
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    margin: 10px;
-    padding: 10px;
-    
+    margin: 10px 0;
     color: rgb(152, 168, 212);
 }
 
 #nomeGrande h1 {
-    overflow: hidden; 
-    border-right: 2px solid #000; 
-    white-space: nowrap; 
+    overflow: hidden;
+    border-right: 2px solid #000;
+    white-space: nowrap;
     margin: 0 auto;
-    animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite; 
+    animation: typing 3.5s steps(15, end), blink-caret 0.75s step-end infinite;
 }
+
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
+
 @keyframes blink-caret {
     from, to { border-color: transparent; }
     50% { border-color: #000; }
 }
 
 /* -------------------------------------------------------------*/
+
+#sobre {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
 
 #infos {
     animation: fadeSlideLeft 0.8s ease-out forwards;
@@ -154,59 +143,45 @@ nav a.active {
 #infos h3 {
     color: white;
     font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+    margin-bottom: 1px;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 50px;
 }
 
 #infos p {
     color: white;
-    font-size: 23px;
-    padding: 20px;
-    margin-right: 486.891px 200px;
-
+    font-size: 18px;
+    border-radius: 12px;
+    
     text-align: left;
-    display: flex;
-    justify-content: left;
+    padding: 10px;
 
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    flex: 1;              
-    max-width: 600px;     
-
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2px;
+    max-width: 600px;
+    
+    line-height: 1.6; 
 }
 
-#link-github {
-    font-size: large;
-}
 
 #foto-text {
     display: grid;
     grid-template-columns: 1fr 360px;
-    gap: 60px;
+    gap: 40px; /* Reduced gap */
     max-width: 1200px;
-    margin: auto;
-    align-items: center;
+    margin: 0 auto;
+    align-items: flex-start;
 }
-
 
 #foto-minha {
     width: 340px;
     height: 340px;
     object-fit: cover;
     border-radius: 24px;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08);
     transition: transform 0.4s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
-    
 }
 
 .foto-wrapper {
@@ -217,11 +192,9 @@ nav a.active {
     animation: fadeSlideRight 0.8s ease-out forwards;
 }
 
-
 #foto-minha:hover {
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.55);
 }
 
 .animate-left,
@@ -230,6 +203,13 @@ nav a.active {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.animate-left {
+    transform: translateX(-40px);
+}
+
+.animate-right {
+    transform: translateX(40px);
+}
 
 .animate-left.show {
     opacity: 1;
@@ -241,39 +221,114 @@ nav a.active {
     transform: translateX(0);
 }
 
+/* -------------------------------------------------------------*/
 
-.animate-left {
-    transform: translateX(-40px);
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px;
 }
 
-.animate-right {
-    transform: translateX(40px);
+.projeto {
+    background: #0b2e70; 
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
 }
+
+.projeto:hover {
+    transform: translateY(-6px);
+}
+
+.imagem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 400px;
+    width: 400px;
+}
+
+#projeto1 {
+    display: flex;
+    
+}
+
+#img-projeto3 {
+    height: 100%;
+    width: 100%;
+} 
+
+#projeto1 h3 {
+    margin-left: 5px;
+    font-size: 30px;
+}
+
+#projeto1 p {
+    margin-left: 10px;
+    margin-right: 500px;
+    margin-top: 20px;
+}
+
+#projeto2 {
+    display: flex;
+    margin-top: 90px;
+    
+}
+
+#projeto2 h3 {
+    margin-left: 100px;
+    font-size: 30px;
+}
+
+#projeto2 p {
+    margin-left: 100px;
+    margin-right: 500px;
+    margin-top: 20px;
+
+    font-size: 20px;
+}
+
+.infos-projeto {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+}
+
+.projeto h3 {
+    color: rgb(255, 255, 255);
+}
+
+.projeto p {
+    font-size: 14px;
+    color: #3512ce;
+}
+
 
 /* -------------------------------------------------------------*/
 
 .contato {
     padding: 80px 20px;
     max-width: 600px;
-    margin: auto;
-    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
     color: white;
 }
 
 .contato h2 {
-    text-align: center;
+    font-size: 36px;
     margin-bottom: 30px;
-
-    font-family: "SN Pro", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-
+    font-family: "Roboto Slab", serif;
 }
 
 .social-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .icon-btn {
@@ -287,7 +342,6 @@ nav a.active {
     color: #fff;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin: 20px;
 }
 
 .icon-btn.whatsapp {
@@ -301,19 +355,25 @@ nav a.active {
 }
 
 .icon-btn.linkedin {
-    background: blue;
+    background: #0077b5;
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+}
+
+.icon-btn.github {
+    background-color: #333;
+    box-shadow: 0 8px 20px rgba(51, 51, 51, 0.4);
 }
 
 .icon-btn:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
 }
-
 
 .form-contato {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 40px;
 }
 
 .form-contato input,
@@ -322,6 +382,7 @@ nav a.active {
     border-radius: 6px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    font-family: inherit;
 }
 
 .form-contato textarea {
@@ -336,12 +397,25 @@ nav a.active {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    font-family: inherit;
+    transition: background 0.3s ease;
 }
 
 .form-contato button:hover {
     background: #000;
 }
 
+/* -------------------------------------------------------------*/
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.875rem;
+    color: #777;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------------------------*/
 
 @media (max-width: 768px) {
     .video-bg {
@@ -353,28 +427,40 @@ nav a.active {
     }
 
     section {
-        padding: 20px;
+        padding: 100px 20px;
     }
 
-    nav a::after {
-        transition: width 0.7s ease;
+    .navbar {
+        height: 60px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px 0;
     }
 
     #nomeGrande {
-        font-size: 20px;
+        font-size: 40px;
     }
-    
+
     #subtitulo {
-        font-size: 17px;
+        font-size: 24px;
+    }
+
+    #infos h3 {
+        font-size: 28px;
+        text-align: center;
     }
 
     #infos p {
-        align-items: center;
-        justify-content: center;
+        font-size: 16px;
+        padding: 15px;
+        text-align: center;
+        max-width: 100%;
     }
 
     #foto-text {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
     }
@@ -382,6 +468,20 @@ nav a.active {
     #foto-minha {
         width: 260px;
         height: 260px;
+    }
+
+    .contato h2 {
+        font-size: 28px;
+    }
+
+    .social-buttons {
+        gap: 15px;
+    }
+
+    .icon-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
     }
 }
 
@@ -391,12 +491,3 @@ nav a.active {
         text-align: center;
     }
 }
-
-.footer {
-    text-align: center;
-    padding: 16px;
-    font-size: 0.875rem;
-    color: #777;
-}
-
-

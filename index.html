@@ -15,11 +15,11 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
-    <title>home</title>
+    <title>Marco J Borges</title>
 </head>
 <body>
 
-        <video class="video-bg" autoplay muted loop playsinline>
+    <video class="video-bg" autoplay muted loop playsinline>
         <source src="templates/videos/video_de_fundo.mp4" type="video/mp4">
     </video>
 
@@ -35,87 +35,130 @@
 
     </header>
 
-    <section id="inicio">
-        <div class="nomes">
+    <main>
 
-            <div id="nomeGrande">
-                <h1>Marco J Borges</h1>
-            </div>
+        <section id="inicio">
+            <div class="nomes">
 
-            <div id="subtitulo">
-                <h3>Desenvolvedor Front-End</h3>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="sobre">
-        <div id="infos" class="animate-left">
-            <h3>Sobre mim:</h3>
-            <div id="foto-text">
-                <div id="pequeno-para">
-                    <p>
-                        Olá, me chamo Marco Jacob Borges, tenho 15 anos, moro em Belo Horizonte - MG, sou estudante de desenvolvimento web FULL-STACK, mas tenho foco em FRONT-END, atualmente busco minha primeira vaga na área da tecnologia, tenho alguns projetos no meu GitHub, lá mostro um pouco das minhas conpetências, para falar comigo acesse a aba de contato.
-                    </p>
-                    <a href="https://github.com/Marcojaco" id="link-github">Acesse meu GitHub aqui</a>
+                <div id="nomeGrande">
+                    <h1>Marco J Borges</h1>
                 </div>
 
-                <div class="foto-wrapper animate-right">
-                    <img id="foto-minha" src="templates/img/eu.jpg" alt="Minha foto">
+                <div id="subtitulo">
+                    <h3>Desenvolvedor Front-End</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div id="infos" class="animate-left">
+                <h3>Sobre mim:</h3>
+                <div id="foto-text">
+                    <div id="pequeno-para">
+                        <p>
+                            Olá, me chamo Marco Jacob Borges, tenho 15 anos, moro em Belo Horizonte – MG, sou um desenvolvedor web full stack, mas tenho foco em front end. Atualmente, busco minha primeira vaga na área de tecnologia. Tenho alguns projetos no meu GitHub; lá mostro um pouco das minhas competências. Para falar comigo, acesse a aba de contato.
+                        </p>
+                        <a 
+                            href="https://github.com/Marcojaco" 
+                            target="_blank"
+                            class="icon-btn github"
+                            aria-label="GitHub"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+
+                    <div class="foto-wrapper animate-right">
+                        <img id="foto-minha" src="templates/img/eu.jpg" alt="Minha foto">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projetos">
+        <section id="projetos">
+            <div class="projeto" id="projeto1">
+                <div class="imagem">
+                    <img src="templates/img/projeto1.png" alt="Projeto 1" id="img-projeto1">
+                </div>
+                <div class="infos-projeto">
+                    <h3>Projeto 1</h3>
+                    <p>Breve descrição do projeto, direta e objetiva.</p>
+                </div>
+            </div>
 
-    </section>
+            <div class="projeto" id="projeto2">
+                <div class="imagem" id="projeto2">
+                    <img src="templates/img/projeto3.png" alt="Projeto 3" id="img-projeto3">
+                </div>
+                <div class="infos-projeto">
+                    <h3>sistema de login para Hotel</h3>
+                    <p>Um sistema full stack. Eu fiz com o intuito de aplicar meus aprendizados de back-end, também aprendendo como interligar front-end com o back-end</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
 
-        <div class="social-buttons">
-            <a
-                href="https://wa.me/5531991847266"
-                target="_blank"
-                class="icon-btn whatsapp"
-                aria-label="WhatsApp"
-            >
-                <i class="fab fa-whatsapp"></i>
-            </a>
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
 
-            <a
-                href="https://instagram.com/_mj_borges_"
-                target="_blank"
-                class="icon-btn instagram"
-                aria-label="Instagram"
-            >
-                <i class="fab fa-instagram"></i>
-            </a>
+            <div class="social-buttons">
+                <a
+                    href="https://wa.me/5531991847266"
+                    target="_blank"
+                    class="icon-btn whatsapp"
+                    aria-label="WhatsApp"
+                >
+                    <i class="fab fa-whatsapp"></i>
+                </a>
 
-            <a
-                href="https://linkedin.com/in/marco-jacob-borges-232675344/"
-                target="_blank"
-                class="icon-btn linkedin"
-                aria-label="linkedin"
-            >
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
+                <a
+                    href="https://instagram.com/_mj_borges_"
+                    target="_blank"
+                    class="icon-btn instagram"
+                    aria-label="Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
 
-        <div id="formulario">
-            <form action="https://formsubmit.co/marcojacobborges26@gmail.com" method="POST" class="form-contato">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="Nova mensagem do site">
+                <a
+                    href="https://linkedin.com/in/marco-jacob-borges-232675344/"
+                    target="_blank"
+                    class="icon-btn linkedin"
+                    aria-label="Linkedin"
+                >
+                    <i class="fab fa-linkedin"></i>
+                </a>
 
-                <input type="text" name="name" placeholder="Seu nome" required>
-                <input type="email" name="email" placeholder="Seu email" required>
-                <textarea name="message" placeholder="Sua mensagem" required></textarea>
+                <a 
+                    href="https://github.com/Marcojaco" 
+                    target="_blank"
+                    class="icon-btn github"
+                    aria-label="GitHub"
+                >
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
 
-                <button type="submit">Enviar mensagem</button>
-            </form>
-        </div>
-    </section>
+            <div id="formulario">
+                <form action="https://formsubmit.co/marcojacobborges26@gmail.com" method="POST" class="form-contato">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nova mensagem do site">
+
+                    <input type="text" name="name" placeholder="Seu nome" required>
+                    <input type="email" name="email" placeholder="Seu email" required>
+                    <textarea name="message" placeholder="Sua mensagem" required></textarea>
+
+                    <button type="submit">Enviar mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main> 
+
+    <footer class="footer">
+        <p>© 2026 Marco J Borges. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 <script>
     const observer = new IntersectionObserver((entries) => {
