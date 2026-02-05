@@ -1,0 +1,5 @@
+- Terminar de fazer a parte de projetos
+
+- arrumar a responsividade co codigo pra celular
+
+- dar os ultimos ajustes

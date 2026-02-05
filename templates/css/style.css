@@ -223,15 +223,15 @@ nav a.active::after {
 
 /* -------------------------------------------------------------*/
 
-.projetos {
+#projetos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     padding: 40px;
 }
 
 .projeto {
-    background: #0b2e70; 
+    background: linear-gradient(45deg, #1000e2, #2703ac, #0c0391); 
     border-radius: 12px;
     padding: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -243,68 +243,89 @@ nav a.active::after {
 }
 
 .imagem {
-    width: 100%;
+    background-color: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: 400px;
-    width: 400px;
+    padding: 0px 10px 0px 10px ;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 250px;
 }
 
-#projeto1 {
-    display: flex;
-    
+#img-projeto1 {
+    border-radius: 20px;
+}
+
+#img-projeto2 {
+    border-radius: 20px;
 }
 
 #img-projeto3 {
-    height: 100%;
-    width: 100%;
-} 
-
-#projeto1 h3 {
-    margin-left: 5px;
-    font-size: 30px;
+    border-radius: 20px;
 }
 
-#projeto1 p {
+
+.infos-projeto h3 {
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infos-projeto p {
+    color: white;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: large;
+}
+
+.placas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.placas {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.placas.html  { background: #e34c26; }
+.placas.css   { background: #264de4; }
+.placas.js    { background: #f0db4f; color: #000; }
+.placas.python { background: #057e33;}
+.placas.mysql { background: #00758f; }
+
+.botao-link-placa {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15px;
     margin-left: 10px;
-    margin-right: 500px;
-    margin-top: 20px;
-}
 
-#projeto2 {
-    display: flex;
-    margin-top: 90px;
-    
-}
-
-#projeto2 h3 {
-    margin-left: 100px;
-    font-size: 30px;
-}
-
-#projeto2 p {
-    margin-left: 100px;
-    margin-right: 500px;
-    margin-top: 20px;
-
-    font-size: 20px;
-}
-
-.infos-projeto {
-    display: flex;
-    flex-direction: column;
-    width: 1000px;
-}
-
-.projeto h3 {
-    color: rgb(255, 255, 255);
-}
-
-.projeto p {
-    font-size: 14px;
-    color: #3512ce;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+    background-color: #333;
 }
 
 
@@ -440,11 +461,11 @@ nav a.active::after {
     }
 
     #nomeGrande {
-        font-size: 40px;
+        font-size: 20px;
     }
 
     #subtitulo {
-        font-size: 24px;
+        font-size: 17px;
     }
 
     #infos h3 {
@@ -469,6 +490,12 @@ nav a.active::after {
         width: 260px;
         height: 260px;
     }
+
+    #projetos {
+        display: flex;
+        gap: 24px;
+        padding: 40px;
+    }   
 
     .contato h2 {
         font-size: 28px;
