@@ -86,7 +86,6 @@ nav a:hover::after,
 nav a.active::after {
     width: 100%;
 }
-
 /* -------------------------------------------------------------*/
 
 .nomes {
@@ -309,23 +308,24 @@ nav a.active::after {
 .placas.python { background: #057e33;}
 .placas.mysql { background: #00758f; }
 
-.botao-link-placa {
-    width: 40px;
-    height: 40px;
-
-    border-radius: 50%;
-
+.acesso-github {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 35px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 
-    margin-top: 15px;
-    margin-left: 10px;
+    background-color: rgb(4, 29, 66);
+    border-radius: 10px;
+    color: white;
+}
 
-    font-size: 1.6rem;
-    color: #fff;
+.link-projeto {
     text-decoration: none;
-    background-color: #333;
+    color: white;
 }
 
 
