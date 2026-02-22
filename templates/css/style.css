@@ -469,6 +469,12 @@ nav a.active::after {
 
     .navbar {
         height: 60px;
+        margin-left: 0;
+    }
+
+    #nome-navbar {
+        display: none;
+
     }
 
     nav a {
@@ -525,19 +531,5 @@ nav a.active::after {
         width: 50px;
         height: 50px;
         font-size: 1.4rem;
-    }
-}
-
-
-@media (max-widht: 470) {
-    #nome-navbar {
-        font-size: 10px;
-    }
-}
-
-@media (max-width: 900px) {
-    #foto-text {
-        grid-template-columns: 1fr;
-        text-align: center;
     }
 }
